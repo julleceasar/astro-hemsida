@@ -8,41 +8,15 @@ import ForWho from "../components/ForWho.astro";
 import Process from "../components/Process.astro";
 import Features from "../components/Features.astro";
 import About from "../components/About.astro";
-const cards = [
-  {
-    title: "Digital assistans & löpande stöd",
-    description: "Jag hjälper dig att skapa struktur, ta hand om tekniken och lösa både stort och smått – så att du kan fokusera på ditt företag.",
-    btnText: "Boka nu!",
-  },
-  {
-    title: "Hemsida – ny eller förbättrad",
-    description: "Behöver du en ny hemsida, eller vill du göra något bättre av den du redan har? Jag skapar lugna, användarvänliga hemsidor som känns rätt för dig – och fungerar i vardagen – med stöd även efteråt.",
-    btnText: "Läs mer",
-  },
-  {
-    title: "SEO & digital marknadsföring",
-    description: "Jag hjälper dig att synas online med SEO och enkel digital marknadsföring, anpassat för små företag. Ett enkelt sätt att nå rätt kunder utan att behöva grotta ner sig i detaljer.",
-    btnText: "Läs mer",
-  },
-];
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
   <Jumbotron />
-  <div class="flex flex-wrap justify-center gap-15 mb-20 mt-10 mx-auto">
-    {
-      cards.map((card) => (
-        <Card
-          title={card.title}
-          description={card.description}
-          btnText={card.btnText}
-        />
-      ))
-    }
-  </div>
   <Problem />
   <Features />
   <ForWho />
   <Process />
   <About />
+  <Contact />
 </Layout>
