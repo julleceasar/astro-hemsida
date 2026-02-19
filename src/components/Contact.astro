@@ -65,7 +65,7 @@
       <div class="text-center">
         <button
           type="submit"
-          class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-blue-600 text-white font-medium shadow-sm hover:shadow-md hover:scale-[1.03] transition transform duration-300"
+          class="cursor-pointer inline-flex items-center justify-center gap-2 px-8 py-3 rounded-xl bg-blue-600 text-white font-medium shadow-sm hover:shadow-md hover:scale-[1.03] transition transform duration-300"
         >
           Skicka meddelande
           <svg
@@ -85,27 +85,49 @@
       </div>
     </form>
 
-    <div id="thank-you" class="hidden mt-6 text-center text-green-600">
-      Tack! Ditt meddelande har skickats.
+    <div
+      id="thank-you"
+      class="mt-6 text-center text-xl text-green-600 flex flex-col items-center hidden"
+    >
+      <svg
+        class="w-[60px] h-[60px] text-green-600 dark:text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M8.5 11.5 11 14l4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+      </svg>
+      <p>Tack! Ditt meddelande har skickats.</p>
+      <p class="text-body text-base italic">
+        Jag återkommer till dig så snart som möjligt.
+      </p>
     </div>
 
     <!-- Alternativ kontaktinfo -->
     <div class="mt-12 text-gray-600 space-y-2 text-sm">
       <p>
         Email: <a
-          href="mailto:info@webbklart.se"
-          class="text-blue-600 hover:underline">info@webbklart.se</a
+          href="mailto:webbklart@outlook.com"
+          class="text-blue-600 hover:underline">webbklart@outlook.com</a
         >
       </p>
       <p>
         Telefon: <a
-          href="tel:+46701234567"
-          class="text-blue-600 hover:underline">+46 70 123 45 67</a
+          href="tel:+46736246223"
+          class="text-blue-600 hover:underline">0736246223</a
         >
       </p>
       <p>
         Du kan också följa mig på <a
-          href="#"
+          href="https://www.linkedin.com/in/julius-djudjaku/"
           class="text-blue-600 hover:underline">LinkedIn</a
         >
       </p>
@@ -114,10 +136,10 @@
 </section>
 
 <script>
-  const form = document.getElementById("contact-form");
-  const thanks = document.getElementById("thank-you");
+  const form: any = document.getElementById("contact-form");
+  const thanks: any = document.getElementById("thank-you");
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async (e: Event) => {
     e.preventDefault(); // hindra default redirect
 
     const data = new FormData(form);
